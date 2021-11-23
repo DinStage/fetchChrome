@@ -1,0 +1,116 @@
+// GET all
+fetch('/people').then(response => response.json().then(console.log))
+
+// GET one
+fetch('/people/3').then(response => response.json().then(console.log))
+
+// POST add new one
+fetch(
+  '/message', 
+  { 
+    method: 'POST', 
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ text: 'Fourth message (4)', id: 10 })
+  }
+).then(result => result.json().then(console.log))
+
+fetch(
+  '/parents', 
+  { 
+    method: 'DELETE', 
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ id: '1' })
+  }
+).then(result => result.json().then(console.log))
+
+fetch(
+  '/parents/2', 
+  { 
+    method: 'PUT', 
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({  name: 'Олечка' })
+  }
+).then(result => result.json().then(console.log))
+
+
+fetch(
+  '/parents', 
+  { 
+    method: 'POST', 
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: 'Иван' })
+  }
+).then(result => result.json().then(console.log))
+
+fetch('/childs').then(response => response.json().then(console.log))
+fetch(
+  '/childs/2/childs', 
+  { 
+    method: 'POST', 
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: 'Анна' })
+  }
+).then(result => result.json().then(console.log))
+
+
+fetch(
+  '/childs/1', 
+  { 
+    method: 'DELETE', 
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify()
+  }
+).then(result => result.json().then(console.log))
+
+
+
+
+fetch(
+  '/parents', 
+  { 
+    method: 'ГЗ', 
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: 'Иван' })
+  }
+).then(result => result.json().then(console.log))
+
+
+
+
+fetch(
+  '/roles/add', 
+  { 
+    method: 'POST', 
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: 'Manager' })
+  }
+).then(result => result.json().then(console.log))
+
+
+// PUT save existing
+fetch(
+  '/people/2', 
+  { 
+    method: 'PUT', 
+    headers: { 'Content-Type': 'application/json' }, 
+    body: JSON.stringify({ firstName: 'Diman', id: 10 })
+  }
+).then(result => result.json().then(console.log));
+
+// DELETE existing
+fetch('/message/4', { method: 'DELETE' }).then(result => console.log(result))
+
+
+fetch(
+  '/people', 
+  { 
+    method: 'POST', 
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ firstName: 'Olga', lastName: 'Dubrovina' })
+  }
+).then(result => result.json().then(console.log))
+
+curl http://127.0.0.1:8090/scripts 
+curl http://127.0.0.1:8090/scripts/add -d name=testting
+
+
